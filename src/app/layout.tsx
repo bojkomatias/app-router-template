@@ -1,7 +1,10 @@
 import './globals.css'
-import localFont from 'next/font/local'
+import { Maven_Pro } from 'next/font/google'
+import { Toaster } from '@/ui/toasts/toaster'
+import { cn } from '@/lib/utils'
+import { SiteHeader } from '@/modules/navigation/site-header'
 
-const font = localFont({ src: './BagnardSans.otf', variable: '--font' })
+const font = Maven_Pro({ subsets: ['latin'], variable: '--font' })
 
 export const metadata = {
   title: 'Create Next App',
@@ -15,8 +18,12 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={font.variable}>
-      <body>{children}</body>
+    <html lang="en" className={cn('font-sans antialiased', font.variable)}>
+      <body className="min-h-screen dark:bg-gray-900 dark:text-slate-100">
+        <SiteHeader />
+        {children}
+        <Toaster />
+      </body>
     </html>
   )
 }

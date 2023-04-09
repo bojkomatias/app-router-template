@@ -1,3 +1,5 @@
+import { Badge } from '@/ui/badge'
+import { Button } from '@/ui/button'
 import {
   ArrowPathIcon,
   ChevronRightIcon,
@@ -12,8 +14,9 @@ import {
   CalendarDaysIcon,
   UsersIcon,
 } from '@heroicons/react/24/outline'
-import { Badge, Link } from '@module/elements'
+
 import Image from 'next/image'
+import Link from 'next/link'
 
 const primaryFeatures = [
   {
@@ -174,7 +177,7 @@ const footerNavigation = {
 
 export default function Home() {
   return (
-    <div className="bg-gray-900">
+    <div className="">
       <main>
         {/* Hero section */}
         <div className="relative isolate overflow-hidden">
@@ -231,7 +234,7 @@ export default function Home() {
               <div className="mt-24 sm:mt-32 lg:mt-16">
                 <Link href="/" className="inline-flex space-x-6">
                   <Badge>Latest updates</Badge>
-                  <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-300">
+                  <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-700">
                     <span>Just shipped v1.0</span>
                     <ChevronRightIcon
                       className="h-5 w-5 text-gray-500"
@@ -240,22 +243,18 @@ export default function Home() {
                   </span>
                 </Link>
               </div>
-              <h1 className="mt-10 text-4xl font-bold tracking-tight text-white sm:text-6xl">
+              <h1 className="mt-10 text-4xl font-bold tracking-tight  sm:text-6xl">
                 Deploy to the cloud with confidence
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
+              <p className="mt-6 text-lg leading-8 text-gray-700">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat aliqua.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <Link href="/" var="button">
-                  Get started
-                </Link>
-                <Link
-                  href="/"
-                  className="text-sm font-semibold leading-6 text-white"
-                >
+                <Button>Get Started</Button>
+
+                <Link href="/" className="text-sm font-semibold leading-6 ">
                   Live demo <span aria-hidden="true">→</span>
                 </Link>
               </div>
@@ -276,7 +275,7 @@ export default function Home() {
 
         {/* Logo cloud */}
         <div className="mx-auto mt-8 max-w-7xl px-6 sm:mt-16 lg:px-8">
-          <h2 className="text-center text-lg font-semibold leading-8 text-white">
+          <h2 className="text-center text-lg font-semibold leading-8 ">
             The world’s most innovative companies use our app
           </h2>
           <div className="mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
@@ -324,10 +323,10 @@ export default function Home() {
             <h2 className="text-base font-semibold leading-7 text-blue-lagoon-400">
               Deploy faster
             </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
               Everything you need to deploy your app
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
+            <p className="mt-6 text-lg leading-8 text-gray-700">
               Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
               magnam voluptatum cupiditate veritatis in accusamus quisquam.
             </p>
@@ -336,16 +335,13 @@ export default function Home() {
             <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
               {primaryFeatures.map((feature) => (
                 <div key={feature.name} className="flex flex-col">
-                  <dt className="text-base font-semibold leading-7 text-white">
+                  <dt className="text-base font-semibold leading-7 ">
                     <div className="mb-6 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-lagoon-500">
-                      <feature.icon
-                        className="h-6 w-6 text-white"
-                        aria-hidden="true"
-                      />
+                      <feature.icon className="h-6 w-6 " aria-hidden="true" />
                     </div>
                     {feature.name}
                   </dt>
-                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-300">
+                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-700">
                     <p className="flex-auto">{feature.description}</p>
                     <p className="mt-6">
                       <Link
@@ -369,10 +365,10 @@ export default function Home() {
               <h2 className="text-base font-semibold leading-7 text-blue-lagoon-400">
                 Everything you need
               </h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
                 No server? No problem.
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-300">
+              <p className="mt-6 text-lg leading-8 text-gray-700">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Maiores impedit perferendis suscipit eaque, iste dolor
                 cupiditate blanditiis.
@@ -394,10 +390,10 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
-            <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-300 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+            <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-700 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
               {secondaryFeatures.map((feature) => (
                 <div key={feature.name} className="relative pl-9">
-                  <dt className="inline font-semibold text-white">
+                  <dt className="inline font-semibold ">
                     <feature.icon
                       className="absolute left-1 top-1 h-5 w-5 text-blue-lagoon-500"
                       aria-hidden="true"
@@ -417,16 +413,16 @@ export default function Home() {
             <h2 className="text-base font-semibold leading-8 text-blue-lagoon-400">
               Our track record
             </h2>
-            <p className="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
               Trusted by thousands of developers&nbsp;worldwide
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-300">
+            <p className="mt-6 text-lg leading-8 text-gray-700">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
               impedit perferendis suscipit eaque, iste dolor cupiditate
               blanditiis ratione.
             </p>
           </div>
-          <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 text-white sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
+          <dl className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10  sm:mt-20 sm:grid-cols-2 sm:gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-4">
             {stats.map((stat) => (
               <div
                 key={stat.id}
@@ -485,12 +481,12 @@ export default function Home() {
             />
           </div>
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">
               Boost your productivity.
               <br />
               Start using our app today.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-300">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-700">
               Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
               anim id veniam aliqua proident excepteur commodo do ea.
             </p>
@@ -501,10 +497,7 @@ export default function Home() {
               >
                 Get started
               </Link>
-              <Link
-                href="/"
-                className="text-sm font-semibold leading-6 text-white"
-              >
+              <Link href="/" className="text-sm font-semibold leading-6 ">
                 Learn more <span aria-hidden="true">→</span>
               </Link>
             </div>
