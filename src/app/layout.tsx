@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn('font-sans antialiased', font.variable)}>
-      <body className="min-h-screen dark:bg-gray-900 dark:text-slate-100">
+      <body className="min-h-screen dark:bg-slate-900 dark:text-slate-100">
         <SiteHeader />
         {children}
         <Toaster />

@@ -197,7 +197,7 @@ export default function Home() {
                 <path d="M.5 200V.5H200" fill="none" />
               </pattern>
             </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-gray-800/20">
+            <svg x="50%" y={-1} className="overflow-visible fill-slate-800/20">
               <path
                 d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
                 strokeWidth={0}
@@ -234,10 +234,10 @@ export default function Home() {
               <div className="mt-24 sm:mt-32 lg:mt-16">
                 <Link href="/" className="inline-flex space-x-6">
                   <Badge>Latest updates</Badge>
-                  <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-gray-700">
+                  <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-slate-500">
                     <span>Just shipped v1.0</span>
                     <ChevronRightIcon
-                      className="h-5 w-5 text-gray-500"
+                      className="h-5 w-5 text-slate-500"
                       aria-hidden="true"
                     />
                   </span>
@@ -246,7 +246,7 @@ export default function Home() {
               <h1 className="mt-10 text-4xl font-bold tracking-tight  sm:text-6xl">
                 Deploy to the cloud with confidence
               </h1>
-              <p className="mt-6 text-lg leading-8 text-gray-700">
+              <p className="mt-6 text-lg leading-8 text-slate-500">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat aliqua.
@@ -326,7 +326,7 @@ export default function Home() {
             <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
               Everything you need to deploy your app
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-700">
+            <p className="mt-6 text-lg leading-8 text-slate-500">
               Lorem ipsum dolor sit amet consect adipisicing elit. Possimus
               magnam voluptatum cupiditate veritatis in accusamus quisquam.
             </p>
@@ -341,7 +341,7 @@ export default function Home() {
                     </div>
                     {feature.name}
                   </dt>
-                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-gray-700">
+                  <dd className="mt-1 flex flex-auto flex-col text-base leading-7 text-slate-500">
                     <p className="flex-auto">{feature.description}</p>
                     <p className="mt-6">
                       <Link
@@ -368,7 +368,7 @@ export default function Home() {
               <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
                 No server? No problem.
               </p>
-              <p className="mt-6 text-lg leading-8 text-gray-700">
+              <p className="mt-6 text-lg leading-8 text-slate-500">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Maiores impedit perferendis suscipit eaque, iste dolor
                 cupiditate blanditiis.
@@ -385,12 +385,12 @@ export default function Home() {
                 height={1442}
               />
               <div className="relative" aria-hidden="true">
-                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-gray-900 pt-[7%]" />
+                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-slate-900 pt-[7%]" />
               </div>
             </div>
           </div>
           <div className="mx-auto mt-16 max-w-7xl px-6 sm:mt-20 md:mt-24 lg:px-8">
-            <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-gray-700 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
+            <dl className="mx-auto grid max-w-2xl grid-cols-1 gap-x-6 gap-y-10 text-base leading-7 text-slate-500 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-x-8 lg:gap-y-16">
               {secondaryFeatures.map((feature) => (
                 <div key={feature.name} className="relative pl-9">
                   <dt className="inline font-semibold ">
@@ -416,7 +416,7 @@ export default function Home() {
             <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
               Trusted by thousands of developers&nbsp;worldwide
             </p>
-            <p className="mt-6 text-lg leading-8 text-gray-700">
+            <p className="mt-6 text-lg leading-8 text-slate-500">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
               impedit perferendis suscipit eaque, iste dolor cupiditate
               blanditiis ratione.
@@ -455,7 +455,7 @@ export default function Home() {
                 <path d="M.5 200V.5H200" fill="none" />
               </pattern>
             </defs>
-            <svg x="50%" y={0} className="overflow-visible fill-gray-800/20">
+            <svg x="50%" y={0} className="overflow-visible fill-slate-800/20">
               <path
                 d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
                 strokeWidth={0}
@@ -486,14 +486,14 @@ export default function Home() {
               <br />
               Start using our app today.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-700">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-500">
               Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
               anim id veniam aliqua proident excepteur commodo do ea.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Get started
               </Link>
@@ -517,14 +517,14 @@ export default function Home() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className="text-gray-500 hover:text-gray-400"
+                  className="text-slate-500 hover:text-slate-400"
                 >
                   <span className="sr-only">{item.name}</span>
                   <item.icon className="h-6 w-6" aria-hidden="true" />
                 </Link>
               ))}
             </div>
-            <p className="mt-8 text-xs leading-5 text-gray-400 md:order-1 md:mt-0">
+            <p className="mt-8 text-xs leading-5 text-slate-400 md:order-1 md:mt-0">
               &copy; 2020 Your Company, Inc. All rights reserved.
             </p>
           </div>
