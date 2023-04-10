@@ -9,7 +9,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          'bg-blue-lagoon-700 hover:bg-blue-lagoon-700 hover:text-white dark:hover:text-white dark:bg-blue-lagoon-700 dark:hover:bg-blue-lagoon-700 hover:shadow-lg hover:shadow-blue-lagoon-700/20 hover:brightness-125',
+          'bg-blue-lagoon-500 dark:bg-blue-lagoon-600 dark:hover:bg-blue-lagoon-600 hover:shadow-xl hover:shadow-blue-lagoon-500/30 hover:saturate-[110%] focus:ring-blue-lagoon-500 dark:focus:ring-blue-lagoon-600',
         destructive:
           'bg-red-500 text-white hover:bg-red-600 dark:hover:bg-red-600',
         outline:

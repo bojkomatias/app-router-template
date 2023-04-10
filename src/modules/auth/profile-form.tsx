@@ -48,7 +48,7 @@ export function ProfileForm() {
               <div className="relative flex gap-x-3">
                 <Checkbox id="comments" />
                 <Label htmlFor="comments">Comments</Label>
-              </div>{' '}
+              </div>
               <div className="relative flex gap-x-3">
                 <Checkbox id="observations" />
                 <Label htmlFor="observations">Observations</Label>

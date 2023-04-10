@@ -24,7 +24,7 @@ interface MainNavProps {
   items: NavItem[]
 }
 
-const userConfig: NavItem[] = [{ title: 'Private Nav', href: '/profile' }]
+const userConfig: NavItem[] = [{ title: 'Dashboard', href: '/dashboard' }]
 
 export async function MainNav({ name, items }: MainNavProps) {
   const session = await getServerSession()
