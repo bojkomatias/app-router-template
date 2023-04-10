@@ -5,3 +5,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  svg {
+    @apply h-5 w-5 stroke-slate-600 transition group-hover:scale-105 group-hover:stroke-slate-900 dark:stroke-slate-400 dark:group-hover:stroke-slate-200;
+  }
+}

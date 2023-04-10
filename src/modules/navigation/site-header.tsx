@@ -39,7 +39,7 @@ export function SiteHeader() {
                   className: 'text-slate-700 dark:text-slate-400',
                 })}
               >
-                <Icons.gitHub className="h-5 w-5" />
+                <Icons.gitHub />
                 <span className="sr-only">GitHub</span>
               </div>
             </Link>

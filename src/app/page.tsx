@@ -73,10 +73,7 @@ export default function Home() {
                   <Badge>Latest updates</Badge>
                   <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-slate-500">
                     <span>Just shipped v1.0</span>
-                    <ChevronRightIcon
-                      className="h-5 w-5 text-slate-500"
-                      aria-hidden="true"
-                    />
+                    <ChevronRightIcon aria-hidden="true" />
                   </span>
                 </Link>
               </div>
@@ -89,7 +86,7 @@ export default function Home() {
                 fugiat aliqua.
               </p>
               <div className="mt-10 flex items-center gap-x-6">
-                <Button>Get Started</Button>
+                <Button variant={'outline'}>Get Started</Button>
 
                 <Link href="/" className="text-sm font-semibold leading-6 ">
                   Live demo <span aria-hidden="true">→</span>
