@@ -8,7 +8,7 @@ export const Badge: React.FC<{
   return (
     <span
       className={cn(
-        'rounded-full bg-blue-lagoon-500/5 px-3 py-1 text-xs font-semibold uppercase text-blue-lagoon-600 ring-1 ring-current',
+        'rounded-full bg-brand-500/5 px-3 py-1 text-xs font-semibold uppercase text-brand-600 ring-1 ring-current',
         props.color
       )}
     >
