@@ -19,7 +19,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={cn('font-sans antialiased', font.variable)}>
-      <body className="relative min-h-screen dark:bg-gray-900 dark:text-gray-100">
+      <body className="relative dark:bg-gray-900 dark:text-gray-100">
         <svg
           className="absolute inset-x-0 bottom-0 top-16 -z-10 h-full w-full stroke-gray-400/5 [mask-image:radial-gradient(130%_130%_at_top_right,white,transparent)]"
           aria-hidden="true"

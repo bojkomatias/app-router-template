@@ -1,5 +1,5 @@
 import type { MainNav, SidebarNav } from '@/types'
-import { Cog, File, Ticket } from 'lucide-react'
+import { Cog, File } from 'lucide-react'
 
 export const dashboardConfig: { mainNav: MainNav; sidebarNav: SidebarNav } = {
   mainNav: [
@@ -22,11 +22,6 @@ export const dashboardConfig: { mainNav: MainNav; sidebarNav: SidebarNav } = {
       title: 'Posts',
       href: '/dashboard',
       icon: File,
-    },
-    {
-      title: 'Billing',
-      href: '/dashboard/billing',
-      icon: Ticket,
     },
     {
       title: 'Settings',

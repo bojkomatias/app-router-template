@@ -8,7 +8,7 @@ import Link from 'next/link'
 export function SidebarNav({ items }: { items: SidebarNav }) {
   // const path = usePathname()
   return (
-    <nav className="grid items-start gap-2 p-1">
+    <nav className="hidden lg:sticky lg:top-16 lg:z-50 lg:flex lg:w-60 lg:flex-col">
       {items.map((item) => (
         <Link key={item.href} href={item.href}>
           <MatchPath

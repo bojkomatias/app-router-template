@@ -6,6 +6,7 @@ import { Table } from '@/ui/tan-stack-table'
 import { ToastAction } from '@/ui/toasts/toast'
 import { type ColumnDef } from '@tanstack/react-table'
 import { Edit2, Trash2 } from 'lucide-react'
+import Link from 'next/link'
 import { useCallback, useMemo } from 'react'
 
 type User = {
@@ -57,6 +58,11 @@ export function UserTable({ data }: { data: User[] }) {
         accessorKey: 'name',
         header: 'Name',
         enableHiding: false,
+        cell: ({ row }) => (
+          <Link href={`dashboard/${row.getValue('id')}`}>
+            {row.getValue('name')}
+          </Link>
+        ),
       },
       {
         accessorKey: 'email',

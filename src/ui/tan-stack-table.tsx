@@ -117,7 +117,7 @@ export function Table({
 
       <div
         ref={tableContainerRef}
-        className="inline-block max-h-[80svh] min-w-full overflow-auto rounded-lg border bg-white align-middle dark:border-gray-800 dark:bg-gray-950/50"
+        className="inline-block max-h-[70svh] min-w-full overflow-auto rounded-lg border bg-white align-middle dark:border-gray-800 dark:bg-gray-950/50"
       >
         <table className="min-w-full table-fixed">
           <thead className="sticky top-0 bg-gray-100 text-sm font-semibold dark:bg-gray-800">
