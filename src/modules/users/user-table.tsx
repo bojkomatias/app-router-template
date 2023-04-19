@@ -1,21 +1,31 @@
 'use client'
 
-import type { Todo } from '@/app/dashboard/page'
 import { useToast } from '@/hooks/use-toast'
-import { Badge } from '@/ui/badge'
 import { Button } from '@/ui/button'
 import { Table } from '@/ui/tan-stack-table'
 import { ToastAction } from '@/ui/toasts/toast'
 import { type ColumnDef } from '@tanstack/react-table'
-import { Cross, Edit2, FileWarning, Trash2 } from 'lucide-react'
+import { Edit2, Trash2 } from 'lucide-react'
+import Link from 'next/link'
 import { useCallback, useMemo } from 'react'
 
-export function TodoTable({ data }: { data: Todo[] }) {
+type User = {
+  id: number
+  name: string
+  username: string
+  email: string
+  address: any
+  phone: string
+  website: string
+  company: any
+}
+
+export function UserTable({ data }: { data: User[] }) {
   const { toast } = useToast()
   const deleteTodo = useCallback(
-    (row: Todo) => {
+    (row: User) => {
       toast({
-        title: row.title,
+        title: row.name,
         description: 'Item deleted!',
 
         action: (
@@ -38,40 +48,48 @@ export function TodoTable({ data }: { data: Todo[] }) {
     [toast]
   )
 
-  const columns = useMemo<ColumnDef<Todo>[]>(
+  const columns = useMemo<ColumnDef<User>[]>(
     () => [
       {
         accessorKey: 'id',
         header: 'ID',
       },
       {
-        accessorKey: 'userId',
-        header: 'User ID',
-      },
-      {
-        accessorKey: 'title',
-        header: 'Title',
-      },
-      {
-        accessorKey: 'completed',
-        header: 'Status',
-        cell: ({ getValue }) => (
-          <Badge color={getValue() ? '' : 'text-yellow-600 bg-yellow-500/5'}>
-            {getValue() ? 'true' : 'false'}
-          </Badge>
+        accessorKey: 'name',
+        header: 'Name',
+        enableHiding: false,
+        cell: ({ row }) => (
+          <Link href={`dashboard/${row.getValue('id')}`}>
+            {row.getValue('name')}
+          </Link>
         ),
       },
       {
+        accessorKey: 'email',
+        header: 'Email',
+        enableHiding: false,
+      },
+      {
+        accessorKey: 'phone',
+        header: 'Phone',
+      },
+      {
+        accessorKey: 'website',
+        header: 'Website',
+      },
+      {
         accessorKey: 'actions',
-        header: (props) => (props.header.isPlaceholder = true),
+        header: 'Actions',
+        isPlaceholder: true,
         enableHiding: false,
         cell: ({ row }) => (
           <span>
-            <Button variant={'ghost'}>
+            <Button variant={'ghost'} size={'sm'}>
               <Edit2 />
             </Button>
             <Button
               variant={'ghost'}
+              size={'sm'}
               onClick={() => {
                 deleteTodo(row.original)
               }}
@@ -87,7 +105,11 @@ export function TodoTable({ data }: { data: Todo[] }) {
 
   return (
     <div>
-      <Table data={data} columns={columns} />
+      <Table
+        data={data}
+        columns={columns}
+        initialVisible={{ website: false }}
+      />
     </div>
   )
 }

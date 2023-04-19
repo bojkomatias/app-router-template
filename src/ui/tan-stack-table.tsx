@@ -9,7 +9,7 @@ import {
   getSortedRowModel,
   useReactTable,
 } from '@tanstack/react-table'
-import { ChevronDown, ChevronUp, MoreVertical } from 'lucide-react'
+import { ChevronDown, ChevronUp, ToggleLeft } from 'lucide-react'
 import React from 'react'
 import { rankItem } from '@tanstack/match-sorter-utils'
 import { useVirtual } from 'react-virtual'
@@ -26,13 +26,15 @@ import {
 export function Table({
   data,
   columns,
+  initialVisible,
 }: {
   data: object[]
   columns: ColumnDef<any, any>[]
+  initialVisible: {}
 }) {
   const [sorting, setSorting] = React.useState<SortingState>([])
   const [globalFilter, setGlobalFilter] = React.useState('')
-  const [columnVisibility, setColumnVisibility] = React.useState({})
+  const [columnVisibility, setColumnVisibility] = React.useState(initialVisible)
 
   const table = useReactTable({
     data,
@@ -73,27 +75,52 @@ export function Table({
   let timeout: NodeJS.Timeout
 
   return (
-    <div className="mx-auto mt-24 max-w-7xl">
-      <Input
-        type="text"
-        defaultValue={globalFilter ?? ''}
-        // Debounced to not overload the processing, tweek according to needs
-        onChange={(e) => {
-          clearTimeout(timeout)
-          timeout = setTimeout(() => {
-            setGlobalFilter(String(e.target.value))
-          }, 100)
-        }}
-        className="mx-auto my-12 max-w-5xl"
-        placeholder="Search all columns..."
-      />
+    <div>
+      <div className="m-2 flex max-w-3xl items-center gap-3">
+        <Input
+          type="text"
+          defaultValue={globalFilter ?? ''}
+          // Debounced to not overload the processing, tweek according to needs
+          onChange={(e) => {
+            clearTimeout(timeout)
+            timeout = setTimeout(() => {
+              setGlobalFilter(String(e.target.value))
+            }, 100)
+          }}
+          placeholder="Search all columns..."
+        />
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button>
+              <ToggleLeft className="h-6 w-6" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuLabel>Toggle Cols</DropdownMenuLabel>
+            <DropdownMenuSeparator />
+            {table.getAllLeafColumns().map((column) => {
+              return (
+                <DropdownMenuCheckboxItem
+                  key={column.id}
+                  disabled={!column.getCanHide()}
+                  checked={column.getIsVisible()}
+                  onClick={column.getToggleVisibilityHandler()}
+                  className={'capitalize'}
+                >
+                  {column.id}
+                </DropdownMenuCheckboxItem>
+              )
+            })}
+          </DropdownMenuContent>
+        </DropdownMenu>
+      </div>
 
       <div
         ref={tableContainerRef}
-        className=" border: inline-block h-[70vh] min-w-full overflow-auto rounded-lg border align-middle dark:border-slate-800"
+        className="inline-block max-h-[70svh] min-w-full overflow-auto rounded-lg border bg-white align-middle dark:border-gray-800 dark:bg-gray-950/50"
       >
         <table className="min-w-full table-fixed">
-          <thead className="sticky top-0 bg-slate-100 text-sm font-semibold dark:bg-slate-800">
+          <thead className="sticky top-0 bg-gray-100 text-sm font-semibold dark:bg-gray-800">
             {table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
@@ -119,35 +146,6 @@ export function Table({
                     </th>
                   )
                 })}
-                <th className="pr-3 text-right">
-                  <DropdownMenu>
-                    <DropdownMenuTrigger asChild>
-                      <Button
-                        variant="ghost"
-                        className="h-8 w-8 rounded-full p-1"
-                      >
-                        <MoreVertical />
-                      </Button>
-                    </DropdownMenuTrigger>
-                    <DropdownMenuContent>
-                      <DropdownMenuLabel>Toggle Cols</DropdownMenuLabel>
-                      <DropdownMenuSeparator />
-                      {table.getAllLeafColumns().map((column) => {
-                        return (
-                          <DropdownMenuCheckboxItem
-                            key={column.id}
-                            disabled={!column.getCanHide()}
-                            checked={column.getIsVisible()}
-                            onClick={column.getToggleVisibilityHandler()}
-                            className="capitalize"
-                          >
-                            {column.id}
-                          </DropdownMenuCheckboxItem>
-                        )
-                      })}
-                    </DropdownMenuContent>
-                  </DropdownMenu>
-                </th>
               </tr>
             ))}
           </thead>
@@ -165,7 +163,7 @@ export function Table({
                     return (
                       <td
                         key={cell.id}
-                        className="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium last:ml-auto last:w-16 sm:pl-6 lg:pl-8"
+                        className="py-4 pl-4 pr-3 text-sm font-medium last:ml-auto last:w-16 last:whitespace-nowrap sm:pl-6 lg:pl-8"
                       >
                         {flexRender(
                           cell.column.columnDef.cell,

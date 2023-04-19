@@ -6,11 +6,11 @@ import { Label } from '@/ui/label'
 export function ProfileForm() {
   return (
     <form className="mx-auto max-w-5xl space-y-12">
-      <div className="border-b border-slate-900/10 pb-12">
+      <div className="border-b border-gray-900/10 pb-12">
         <h2 className="text-base font-semibold leading-7">
           Personal Information
         </h2>
-        <p className="mt-1 text-sm leading-6 text-slate-500">
+        <p className="mt-1 text-sm leading-6 text-gray-500">
           Use a permanent address where you can receive mail.
         </p>
 
@@ -32,9 +32,9 @@ export function ProfileForm() {
         </div>
       </div>
 
-      <div className="border-b border-slate-900/10 pb-12">
+      <div className="border-b border-gray-900/10 pb-12">
         <h2 className="text-base font-semibold leading-7">Notifications</h2>
-        <p className="mt-1 text-sm leading-6 text-slate-500">
+        <p className="mt-1 text-sm leading-6 text-gray-500">
           We&apos;ll always let you know about important changes, but you pick
           what else you want to hear about.
         </p>
@@ -59,10 +59,10 @@ export function ProfileForm() {
       </div>
 
       <div className="mt-6 flex items-center justify-end gap-x-6">
-        <Button variant={'ghost'} type="button">
-          Cancel
+        <Button type="button">Cancel</Button>
+        <Button type="submit" variant={'theme'}>
+          Save
         </Button>
-        <Button type="submit">Save</Button>
       </div>
     </form>
   )

@@ -8,24 +8,28 @@ module.exports = {
     extend: {
       colors: {
         // https://uicolors.app/
-        'blue-lagoon': {
-          '50': '#e9fffc',
-          '100': '#c7fff7',
-          '200': '#96fff1',
-          '300': '#4dffea',
-          '400': '#00ffee',
-          '500': '#00f2f8',
-          '600': '#00bfd0',
-          '700': '#0098a7',
-          '800': '#047582',
-          '900': '#086271',
-          '950': '#00434f',
+        // Can choose the name you want, 'brand' is a suggestion
+        'brand': {
+          '50': '#eefbf5',
+          '100': '#d6f5e6',
+          '200': '#b1e9d1',
+          '300': '#7ed7b7',
+          '400': '#49be97',
+          '500': '#27a27d',
+          '600': '#1b9170',
+          '700': '#136953',
+          '800': '#125343',
+          '900': '#104438',
+          '950': '#082620',
         },
+
       },
       fontFamily: {
         sans: ['var(--font)']
-      }
-      , keyframes: {
+      },
+      dropShadow: {
+        '3xl': '0 35px 35px rgba(40,101, 186, 0.25)',
+      }, keyframes: {
         "accordion-down": {
           from: { height: 0 },
           to: { height: "var(--radix-accordion-content-height)" },

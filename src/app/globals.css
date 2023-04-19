@@ -8,6 +8,6 @@
 
 @layer base {
   svg {
-    @apply h-5 w-5 stroke-slate-600 transition group-hover:scale-105 group-hover:stroke-slate-900 dark:stroke-slate-400 dark:group-hover:stroke-slate-200;
+    @apply h-4 w-4 stroke-gray-600 group-hover:stroke-brand-600 dark:stroke-gray-400;
   }
 }

@@ -1,5 +1,5 @@
 import { Badge } from '@/ui/badge'
-import { Button } from '@/ui/button'
+import { Button, buttonVariants } from '@/ui/button'
 import { ChevronRightIcon } from 'lucide-react'
 
 import Image from 'next/image'
@@ -18,47 +18,6 @@ export default function Home() {
       <main>
         {/* Hero section */}
         <div className="relative isolate overflow-hidden">
-          <svg
-            className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-            aria-hidden="true"
-          >
-            <defs>
-              <pattern
-                id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-                width={200}
-                height={200}
-                x="50%"
-                y={-1}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={-1} className="overflow-visible fill-slate-800/20">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect
-              width="100%"
-              height="100%"
-              strokeWidth={0}
-              fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
-            />
-          </svg>
-          <div
-            className="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
-            aria-hidden="true"
-          >
-            <div
-              className="aspect-[1108/632] w-[69.25rem] bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
-              style={{
-                clipPath:
-                  'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-              }}
-            />
-          </div>
           <div className="mx-auto max-w-7xl px-6 pb-24 pt-10 sm:pb-40 lg:flex lg:px-8 lg:pt-40">
             <div className="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8">
               <Image
@@ -68,19 +27,17 @@ export default function Home() {
                 width={200}
                 height={100}
               />
-              <div className="mt-24 sm:mt-32 lg:mt-16">
-                <Link href="/" className="inline-flex space-x-6">
-                  <Badge>Latest updates</Badge>
-                  <span className="inline-flex items-center space-x-2 text-sm font-medium leading-6 text-slate-500">
-                    <span>Just shipped v1.0</span>
-                    <ChevronRightIcon aria-hidden="true" />
-                  </span>
+              <div className="mt-24 flex items-center space-x-6 sm:mt-32 lg:mt-16">
+                <Badge>Latest updates</Badge>
+                <Link href="/" className={buttonVariants({ variant: 'link' })}>
+                  Just shipped v1.0
+                  <ChevronRightIcon aria-hidden="true" />
                 </Link>
               </div>
               <h1 className="mt-10 text-4xl font-bold tracking-tight  sm:text-6xl">
                 Deploy to the cloud with confidence
               </h1>
-              <p className="mt-6 text-lg leading-8 text-slate-500">
+              <p className="mt-6 text-lg leading-8 text-gray-500">
                 Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
                 lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
                 fugiat aliqua.
@@ -155,13 +112,13 @@ export default function Home() {
         <div className="mt-32 sm:mt-56">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl sm:text-center">
-              <h2 className="text-base font-semibold leading-7 text-blue-lagoon-400">
+              <h2 className="text-base font-semibold leading-7 text-brand-400">
                 Everything you need
               </h2>
               <p className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
                 No server? No problem.
               </p>
-              <p className="mt-6 text-lg leading-8 text-slate-500">
+              <p className="mt-6 text-lg leading-8 text-gray-500">
                 Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                 Maiores impedit perferendis suscipit eaque, iste dolor
                 cupiditate blanditiis.
@@ -178,7 +135,7 @@ export default function Home() {
                 height={1442}
               />
               <div className="relative" aria-hidden="true">
-                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%] dark:from-slate-900" />
+                <div className="absolute -inset-x-20 bottom-0 bg-gradient-to-t from-white pt-[7%] dark:from-gray-900" />
               </div>
             </div>
           </div>
@@ -187,13 +144,13 @@ export default function Home() {
         {/* Stats */}
         <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
           <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
-            <h2 className="text-base font-semibold leading-8 text-blue-lagoon-400">
+            <h2 className="text-base font-semibold leading-8 text-brand-400">
               Our track record
             </h2>
             <h1 className="mt-2 text-3xl font-bold tracking-tight  sm:text-4xl">
               Trusted by thousands of developers&nbsp;worldwide
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-500">
+            <p className="mt-6 text-lg leading-8 text-gray-500">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores
               impedit perferendis suscipit eaque, iste dolor cupiditate
               blanditiis ratione.
@@ -216,61 +173,20 @@ export default function Home() {
 
         {/* CTA section */}
         <div className="relative isolate mt-32 px-6 py-32 sm:mt-56 sm:py-40 lg:px-8">
-          <svg
-            className="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
-            aria-hidden="true"
-          >
-            <defs>
-              <pattern
-                id="1d4240dd-898f-445f-932d-e2872fd12de3"
-                width={200}
-                height={200}
-                x="50%"
-                y={0}
-                patternUnits="userSpaceOnUse"
-              >
-                <path d="M.5 200V.5H200" fill="none" />
-              </pattern>
-            </defs>
-            <svg x="50%" y={0} className="overflow-visible fill-slate-800/20">
-              <path
-                d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-                strokeWidth={0}
-              />
-            </svg>
-            <rect
-              width="100%"
-              height="100%"
-              strokeWidth={0}
-              fill="url(#1d4240dd-898f-445f-932d-e2872fd12de3)"
-            />
-          </svg>
-          <div
-            className="absolute inset-x-0 top-10 -z-10 flex transform-gpu justify-center overflow-hidden blur-3xl"
-            aria-hidden="true"
-          >
-            <div
-              className="aspect-[1108/632] w-[69.25rem] flex-none bg-gradient-to-r from-[#80caff] to-[#4f46e5] opacity-20"
-              style={{
-                clipPath:
-                  'polygon(73.6% 51.7%, 91.7% 11.8%, 100% 46.4%, 97.4% 82.2%, 92.5% 84.9%, 75.7% 64%, 55.3% 47.5%, 46.5% 49.4%, 45% 62.9%, 50.3% 87.2%, 21.3% 64.1%, 0.1% 100%, 5.4% 51.1%, 21.4% 63.9%, 58.9% 0.2%, 73.6% 51.7%)',
-              }}
-            />
-          </div>
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">
               Boost your productivity.
               <br />
               Start using our app today.
             </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-slate-500">
+            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-500">
               Incididunt sint fugiat pariatur cupidatat consectetur sit cillum
               anim id veniam aliqua proident excepteur commodo do ea.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Link
                 href="/"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-sm hover:bg-gray-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
               >
                 Get started
               </Link>
